@@ -9,7 +9,7 @@ const userInfo = ref(null)
 onMounted(async () => {
   const oktaAuth = new OktaAuth({
     issuer: `https://${localStorage.getItem('oktaDomain')}/oauth2/default`,
-    clientId: localStorage.getItem('clientId'),
+    clientId: localStorage.getItem('clientId') || "",
     redirectUri: `${window.location.origin}/login/callback`
   })
 
